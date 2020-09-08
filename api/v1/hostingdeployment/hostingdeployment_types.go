@@ -88,6 +88,7 @@ type HostingDeploymentStatus struct {
 // +kubebuilder:subresource:status
 // +kubebuilder:printcolumn:name="Status",type="string", JSONPath=".status.endpointStatus"
 // +kubebuilder:printcolumn:name="Sagemaker-endpoint-name",type="string", JSONPath=".status.endpointName"
+// +kubebuilder:pruning:PreserveUnknownFields
 // HostingDeployment is the Schema for the hostingdeployments API
 type HostingDeployment struct {
 	metav1.TypeMeta   `json:",inline"`
