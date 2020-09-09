@@ -44,6 +44,7 @@ type HostingDeploymentSpec struct {
 	ProductionVariants []commonv1.ProductionVariant `json:"productionVariants"`
 
 	// +kubebuilder:pruning:PreserveUnknownFields
+	// +kubebuilder:validation:XPreserveUnknownFields
 	Models []commonv1.Model `json:"models"`
 
 	Tags []commonv1.Tag `json:"tags,omitempty"`
@@ -89,6 +90,8 @@ type HostingDeploymentStatus struct {
 // +kubebuilder:subresource:status
 // +kubebuilder:printcolumn:name="Status",type="string", JSONPath=".status.endpointStatus"
 // +kubebuilder:printcolumn:name="Sagemaker-endpoint-name",type="string", JSONPath=".status.endpointName"
+// +kubebuilder:pruning:PreserveUnknownFields
+// +kubebuilder:validation:XPreserveUnknownFields
 // HostingDeployment is the Schema for the hostingdeployments API
 type HostingDeployment struct {
 	metav1.TypeMeta   `json:",inline"`
