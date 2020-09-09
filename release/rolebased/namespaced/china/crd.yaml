@@ -630,6 +630,7 @@ spec:
                 - name
                 type: object
               type: array
+              x-kubernetes-preserve-unknown-fields: true
             productionVariants:
               items:
                 properties:
@@ -1382,10 +1383,13 @@ spec:
                     type: string
                 type: object
               type: array
+              x-kubernetes-preserve-unknown-fields: true
             enableNetworkIsolation:
               type: boolean
+              x-kubernetes-preserve-unknown-fields: true
             executionRoleArn:
               type: string
+              x-kubernetes-preserve-unknown-fields: true
             primaryContainer:
               description: Describes the container, as part of model definition.
               properties:
@@ -1408,10 +1412,13 @@ spec:
                 modelPackageName:
                   type: string
               type: object
+              x-kubernetes-preserve-unknown-fields: true
             region:
               type: string
+              x-kubernetes-preserve-unknown-fields: true
             sageMakerEndpoint:
               type: string
+              x-kubernetes-preserve-unknown-fields: true
             tags:
               items:
                 properties:
@@ -1425,6 +1432,7 @@ spec:
                 - value
                 type: object
               type: array
+              x-kubernetes-preserve-unknown-fields: true
             vpcConfig:
               properties:
                 securityGroupIds:
@@ -1441,6 +1449,7 @@ spec:
               - securityGroupIds
               - subnets
               type: object
+              x-kubernetes-preserve-unknown-fields: true
           required:
           - executionRoleArn
           - region

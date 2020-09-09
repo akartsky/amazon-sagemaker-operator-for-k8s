@@ -30,20 +30,28 @@ import (
 
 // ModelSpec defines the desired state of Model
 type ModelSpec struct {
+	// +kubebuilder:pruning:PreserveUnknownFields
 	Containers []*commonv1.ContainerDefinition `json:"containers,omitempty"`
 
+	// +kubebuilder:pruning:PreserveUnknownFields
 	EnableNetworkIsolation *bool `json:"enableNetworkIsolation,omitempty"`
 
+	// +kubebuilder:pruning:PreserveUnknownFields
 	ExecutionRoleArn *string `json:"executionRoleArn"`
 
+    // +kubebuilder:pruning:PreserveUnknownFields
 	PrimaryContainer *commonv1.ContainerDefinition `json:"primaryContainer,omitempty"`
 
+	// +kubebuilder:pruning:PreserveUnknownFields
 	Tags []commonv1.Tag `json:"tags,omitempty"`
 
+	// +kubebuilder:pruning:PreserveUnknownFields
 	VpcConfig *commonv1.VpcConfig `json:"vpcConfig,omitempty"`
 
+	// +kubebuilder:pruning:PreserveUnknownFields
 	Region *string `json:"region"`
 
+	// +kubebuilder:pruning:PreserveUnknownFields
 	SageMakerEndpoint *string `json:"sageMakerEndpoint,omitempty"`
 }
 
