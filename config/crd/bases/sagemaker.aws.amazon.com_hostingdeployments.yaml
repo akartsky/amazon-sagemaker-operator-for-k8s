@@ -100,6 +100,7 @@ spec:
                 - name
                 type: object
               type: array
+              x-kubernetes-embedded-resource: true
               x-kubernetes-preserve-unknown-fields: true
             productionVariants:
               items:
@@ -238,7 +239,6 @@ spec:
               type: array
           type: object
       type: object
-      x-kubernetes-preserve-unknown-fields: true
   version: v1
   versions:
   - name: v1

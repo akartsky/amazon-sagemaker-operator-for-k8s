@@ -630,6 +630,7 @@ spec:
                 - name
                 type: object
               type: array
+              x-kubernetes-embedded-resource: true
               x-kubernetes-preserve-unknown-fields: true
             productionVariants:
               items:
@@ -779,7 +780,6 @@ spec:
               type: array
           type: object
       type: object
-      x-kubernetes-preserve-unknown-fields: true
   version: v1
   versions:
   - name: v1
@@ -1384,13 +1384,12 @@ spec:
                     type: string
                 type: object
               type: array
+              x-kubernetes-embedded-resource: true
               x-kubernetes-preserve-unknown-fields: true
             enableNetworkIsolation:
               type: boolean
-              x-kubernetes-preserve-unknown-fields: true
             executionRoleArn:
               type: string
-              x-kubernetes-preserve-unknown-fields: true
             primaryContainer:
               description: Describes the container, as part of model definition.
               properties:
@@ -1413,13 +1412,10 @@ spec:
                 modelPackageName:
                   type: string
               type: object
-              x-kubernetes-preserve-unknown-fields: true
             region:
               type: string
-              x-kubernetes-preserve-unknown-fields: true
             sageMakerEndpoint:
               type: string
-              x-kubernetes-preserve-unknown-fields: true
             tags:
               items:
                 properties:
@@ -1433,7 +1429,6 @@ spec:
                 - value
                 type: object
               type: array
-              x-kubernetes-preserve-unknown-fields: true
             vpcConfig:
               properties:
                 securityGroupIds:
@@ -1450,7 +1445,6 @@ spec:
               - securityGroupIds
               - subnets
               type: object
-              x-kubernetes-preserve-unknown-fields: true
           required:
           - executionRoleArn
           - region
@@ -1477,7 +1471,6 @@ spec:
               type: string
           type: object
       type: object
-      x-kubernetes-preserve-unknown-fields: true
   version: v1
   versions:
   - name: v1

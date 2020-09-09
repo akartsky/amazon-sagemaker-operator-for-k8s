@@ -30,7 +30,6 @@ import (
 
 // HostingDeploymentSpec defines the desired state of HostingDeployment
 type HostingDeploymentSpec struct {
-
 	// +kubebuilder:validation:MinLength=1
 	Region *string `json:"region"`
 
@@ -43,8 +42,8 @@ type HostingDeploymentSpec struct {
 	// +kubebuilder:validation:MinItems=1
 	ProductionVariants []commonv1.ProductionVariant `json:"productionVariants"`
 
+	// +kubebuilder:validation:EmbeddedResource
 	// +kubebuilder:pruning:PreserveUnknownFields
-	// +kubebuilder:validation:XPreserveUnknownFields
 	Models []commonv1.Model `json:"models"`
 
 	Tags []commonv1.Tag `json:"tags,omitempty"`
@@ -90,8 +89,8 @@ type HostingDeploymentStatus struct {
 // +kubebuilder:subresource:status
 // +kubebuilder:printcolumn:name="Status",type="string", JSONPath=".status.endpointStatus"
 // +kubebuilder:printcolumn:name="Sagemaker-endpoint-name",type="string", JSONPath=".status.endpointName"
+// +kubebuilder:validation:EmbeddedResource
 // +kubebuilder:pruning:PreserveUnknownFields
-// +kubebuilder:validation:XPreserveUnknownFields
 // HostingDeployment is the Schema for the hostingdeployments API
 type HostingDeployment struct {
 	metav1.TypeMeta   `json:",inline"`

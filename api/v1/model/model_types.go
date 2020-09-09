@@ -30,36 +30,22 @@ import (
 
 // ModelSpec defines the desired state of Model
 type ModelSpec struct {
+	// +kubebuilder:validation:EmbeddedResource
 	// +kubebuilder:pruning:PreserveUnknownFields
-	// +kubebuilder:validation:XPreserveUnknownFields
 	Containers []*commonv1.ContainerDefinition `json:"containers,omitempty"`
 
-	// +kubebuilder:pruning:PreserveUnknownFields
-	// +kubebuilder:validation:XPreserveUnknownFields
 	EnableNetworkIsolation *bool `json:"enableNetworkIsolation,omitempty"`
 
-	// +kubebuilder:pruning:PreserveUnknownFields
-	// +kubebuilder:validation:XPreserveUnknownFields
 	ExecutionRoleArn *string `json:"executionRoleArn"`
 
-    // +kubebuilder:pruning:PreserveUnknownFields
-    // +kubebuilder:validation:XPreserveUnknownFields
 	PrimaryContainer *commonv1.ContainerDefinition `json:"primaryContainer,omitempty"`
 
-	// +kubebuilder:pruning:PreserveUnknownFields
-	// +kubebuilder:validation:XPreserveUnknownFields
 	Tags []commonv1.Tag `json:"tags,omitempty"`
 
-	// +kubebuilder:pruning:PreserveUnknownFields
-	// +kubebuilder:validation:XPreserveUnknownFields
 	VpcConfig *commonv1.VpcConfig `json:"vpcConfig,omitempty"`
 
-	// +kubebuilder:pruning:PreserveUnknownFields
-	// +kubebuilder:validation:XPreserveUnknownFields
 	Region *string `json:"region"`
 
-	// +kubebuilder:pruning:PreserveUnknownFields
-	// +kubebuilder:validation:XPreserveUnknownFields
 	SageMakerEndpoint *string `json:"sageMakerEndpoint,omitempty"`
 }
 
@@ -87,8 +73,8 @@ type ModelStatus struct {
 // +kubebuilder:subresource:status
 // +kubebuilder:printcolumn:name="Status",type="string", JSONPath=".status.status"
 // +kubebuilder:printcolumn:name="Sage-Maker-Model-Name",type="string", JSONPath=".status.sageMakerModelName"
+// +kubebuilder:validation:EmbeddedResource
 // +kubebuilder:pruning:PreserveUnknownFields
-// +kubebuilder:validation:XPreserveUnknownFields
 // Model is the Schema for the hostingdeployments API
 type Model struct {
 	metav1.TypeMeta   `json:",inline"`
