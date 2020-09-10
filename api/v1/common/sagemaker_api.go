@@ -355,7 +355,6 @@ type ProductionVariantInstanceType string
 // +kubebuilder:pruning:PreserveUnknownFields
 // +kubebuilder:validation:XPreserveUnknownFields
 type ContainerDefinition struct {
-    // +kubebuilder:pruning:PreserveUnknownFields
 	ContainerHostname *string `json:"containerHostname,omitempty"`
 
 	Environment []*KeyValuePair `json:"environment,omitempty"`
@@ -369,6 +368,7 @@ type ContainerDefinition struct {
 
 // This is something we are defining not coming from aws-sdk-go-v2
 // +kubebuilder:pruning:PreserveUnknownFields
+// +kubebuilder:validation:XPreserveUnknownFields
 type Model struct {
 	Name *string `json:"name"`
 

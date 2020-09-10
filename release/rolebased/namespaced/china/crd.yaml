@@ -581,7 +581,6 @@ spec:
                       properties:
                         containerHostname:
                           type: string
-                          x-kubernetes-preserve-unknown-fields: true
                         environment:
                           items:
                             description: Used in describing maps in Kubernetes.
@@ -632,6 +631,7 @@ spec:
                 - executionRoleArn
                 - name
                 type: object
+                x-kubernetes-preserve-unknown-fields: true
               type: array
               x-kubernetes-preserve-unknown-fields: true
             productionVariants:
@@ -1368,7 +1368,6 @@ spec:
                 properties:
                   containerHostname:
                     type: string
-                    x-kubernetes-preserve-unknown-fields: true
                   environment:
                     items:
                       description: Used in describing maps in Kubernetes.
@@ -1398,7 +1397,6 @@ spec:
               properties:
                 containerHostname:
                   type: string
-                  x-kubernetes-preserve-unknown-fields: true
                 environment:
                   items:
                     description: Used in describing maps in Kubernetes.
