@@ -30,6 +30,7 @@ import (
 
 // ModelSpec defines the desired state of Model
 // +kubebuilder:pruning:PreserveUnknownFields
+// +kubebuilder:validation:XPreserveUnknownFields
 type ModelSpec struct {
 	// +kubebuilder:pruning:PreserveUnknownFields
 	Containers []*commonv1.ContainerDefinition `json:"containers,omitempty"`
@@ -75,6 +76,7 @@ type ModelStatus struct {
 // +kubebuilder:printcolumn:name="Sage-Maker-Model-Name",type="string", JSONPath=".status.sageMakerModelName"
 // +kubebuilder:validation:EmbeddedResource
 // +kubebuilder:pruning:PreserveUnknownFields
+// +kubebuilder:validation:XPreserveUnknownFields
 // Model is the Schema for the hostingdeployments API
 type Model struct {
 	metav1.TypeMeta   `json:",inline"`

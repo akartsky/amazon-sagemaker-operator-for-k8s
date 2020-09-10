@@ -69,6 +69,7 @@ spec:
                         modelPackageName:
                           type: string
                       type: object
+                      x-kubernetes-preserve-unknown-fields: true
                     minItems: 1
                     type: array
                     x-kubernetes-preserve-unknown-fields: true

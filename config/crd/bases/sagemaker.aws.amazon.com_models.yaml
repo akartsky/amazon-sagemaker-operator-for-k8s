@@ -63,6 +63,7 @@ spec:
                   modelPackageName:
                     type: string
                 type: object
+                x-kubernetes-preserve-unknown-fields: true
               type: array
               x-kubernetes-preserve-unknown-fields: true
             enableNetworkIsolation:
@@ -92,6 +93,7 @@ spec:
                 modelPackageName:
                   type: string
               type: object
+              x-kubernetes-preserve-unknown-fields: true
             region:
               type: string
             sageMakerEndpoint:
@@ -129,6 +131,7 @@ spec:
           - executionRoleArn
           - region
           type: object
+          x-kubernetes-preserve-unknown-fields: true
         status:
           description: ModelStatus defines the observed state of Model
           properties:
@@ -150,6 +153,7 @@ spec:
               type: string
           type: object
       type: object
+      x-kubernetes-preserve-unknown-fields: true
   version: v1
   versions:
   - name: v1

@@ -353,6 +353,7 @@ type ProductionVariantInstanceType string
 
 // Describes the container, as part of model definition.
 // +kubebuilder:pruning:PreserveUnknownFields
+// +kubebuilder:validation:XPreserveUnknownFields
 type ContainerDefinition struct {
     // +kubebuilder:pruning:PreserveUnknownFields
 	ContainerHostname *string `json:"containerHostname,omitempty"`
@@ -373,6 +374,7 @@ type Model struct {
 
 	// +kubebuilder:validation:MinItems=1
 	// +kubebuilder:pruning:PreserveUnknownFields
+	// +kubebuilder:validation:XPreserveUnknownFields
 	Containers []*ContainerDefinition `json:"containers,omitempty"`
 
 	PrimaryContainer *string `json:"primaryContainer,omitempty"`
