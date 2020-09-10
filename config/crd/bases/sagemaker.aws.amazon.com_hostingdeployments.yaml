@@ -51,6 +51,7 @@ spec:
                       properties:
                         containerHostname:
                           type: string
+                          x-kubernetes-preserve-unknown-fields: true
                         environment:
                           items:
                             description: Used in describing maps in Kubernetes.
@@ -70,6 +71,7 @@ spec:
                       type: object
                     minItems: 1
                     type: array
+                    x-kubernetes-preserve-unknown-fields: true
                   enableNetworkIsolation:
                     type: boolean
                   executionRoleArn:

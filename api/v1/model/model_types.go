@@ -29,6 +29,7 @@ import (
 )
 
 // ModelSpec defines the desired state of Model
+// +kubebuilder:pruning:PreserveUnknownFields
 type ModelSpec struct {
 	// +kubebuilder:pruning:PreserveUnknownFields
 	Containers []*commonv1.ContainerDefinition `json:"containers,omitempty"`

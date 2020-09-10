@@ -352,7 +352,9 @@ type ProductionVariantAcceleratorType string
 type ProductionVariantInstanceType string
 
 // Describes the container, as part of model definition.
+// +kubebuilder:pruning:PreserveUnknownFields
 type ContainerDefinition struct {
+    // +kubebuilder:pruning:PreserveUnknownFields
 	ContainerHostname *string `json:"containerHostname,omitempty"`
 
 	Environment []*KeyValuePair `json:"environment,omitempty"`
@@ -365,10 +367,12 @@ type ContainerDefinition struct {
 }
 
 // This is something we are defining not coming from aws-sdk-go-v2
+// +kubebuilder:pruning:PreserveUnknownFields
 type Model struct {
 	Name *string `json:"name"`
 
 	// +kubebuilder:validation:MinItems=1
+	// +kubebuilder:pruning:PreserveUnknownFields
 	Containers []*ContainerDefinition `json:"containers,omitempty"`
 
 	PrimaryContainer *string `json:"primaryContainer,omitempty"`
