@@ -30,7 +30,6 @@ import (
 
 // ModelSpec defines the desired state of Model
 type ModelSpec struct {
-	// +kubebuilder:validation:EmbeddedResource
 	// +kubebuilder:pruning:PreserveUnknownFields
 	Containers []*commonv1.ContainerDefinition `json:"containers,omitempty"`
 
