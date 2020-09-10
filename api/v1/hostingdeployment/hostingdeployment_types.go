@@ -42,7 +42,6 @@ type HostingDeploymentSpec struct {
 	// +kubebuilder:validation:MinItems=1
 	ProductionVariants []commonv1.ProductionVariant `json:"productionVariants"`
 
-	// +kubebuilder:validation:EmbeddedResource
 	// +kubebuilder:pruning:PreserveUnknownFields
 	Models []commonv1.Model `json:"models"`
 
